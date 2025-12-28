@@ -1,12 +1,9 @@
 ---
-description: >-
-  API sorguları yaparken body içerisinde oturum bilgilerini göndermeniz
-  gerekmektedir.
+title: Filtreleme Parametreleri
 ---
-
 # Filtreleme Parametreleri
 
-### <mark style="color:blue;">İşlem Parametreleri</mark>
+### İşlem Parametreleri
 
 Listeleme servislerinde istek sorgusunda kullanılan parametrelerle ilgili detaylar ve örnekler aşağıda belirtilmiştir.
 
@@ -20,13 +17,17 @@ Listeleme servislerinde istek sorgusunda kullanılan parametrelerle ilgili detay
 }
 ```
 
-<table><thead><tr><th width="150">Tag</th><th>Açıklama</th></tr></thead><tbody><tr><td><code>filters</code></td><td>Listelemek istediğiniz kolon veya belirli bir veriyi çekebilmek için kullanılabilen filtreleme alanıdır.</td></tr><tr><td><code>params</code></td><td>Listelenecek kolonları ifade eder.</td></tr><tr><td><code>limit*</code></td><td>Listelemek istediğiniz veri sayısını ifade eder.</td></tr><tr><td><code>offset*</code></td><td>Listelemek istediğiniz veri işlem numarasının (id) başlangıç değerini ifade eder.</td></tr><tr><td><code>sorting</code></td><td>Listelemek istediğiniz verilerin sıralama standardını ifade eder.</td></tr></tbody></table>
+| Tag | Açıklama |
+| --- | --- |
+| `filters` | Listelemek istediğiniz kolon veya belirli bir veriyi çekebilmek için kullanılabilen filtreleme alanıdır. |
+| `params` | Listelenecek kolonları ifade eder. |
+| `limit*` | Listelemek istediğiniz veri sayısını ifade eder. |
+| `offset*` | Listelemek istediğiniz veri işlem numarasının (id) başlangıç değerini ifade eder. |
+| `sorting` | Listelemek istediğiniz verilerin sıralama standardını ifade eder. |
 
-{% hint style="info" %}
-&#x20;limit ve offset parametreleri zorunlu parametrelerdir.
-{% endhint %}
+{% hint style="info" %} limit ve offset parametreleri zorunlu parametrelerdir. {% endhint %}
 
-<mark style="color:blue;">Filtreleme Örneği</mark>
+Filtreleme Örneği
 
 Filters alanı kullanarak istenilen bir kolonda belirlenen veriye uygun kaydın getirilmesi istenmektedir.
 
@@ -40,24 +41,30 @@ Filters alanı kullanarak istenilen bir kolonda belirlenen veriye uygun kaydın 
 }
 ```
 
-<table><thead><tr><th width="150">Tag</th><th width="290.8910891730195">Açıklama</th><th>Format</th></tr></thead><tbody><tr><td>field</td><td>Listelemek istediğimiz verilerin ait olduğu kolonları ifade eder.</td><td><strong>String</strong></td></tr><tr><td>operator</td><td>Field ve value değerleri arasındaki eşleştirme ifadelerini parametre olarak alır.</td><td><strong>"=", "OR =", ">", "OR >", "&#x3C;", "&#x3C;=", "OR &#x3C;", ">=", "OR >=", "&#x3C;=", "OR &#x3C;=", "&#x3C;>", "OR &#x3C;>", "IN", "OR IN", "NOT LIKE", "NOT IN", "OR NOT IN", "LIKE", "OR LIKE", "OR NOT LIKE", "LIKE AFTER", "LIKE BEFORE", "LIKE NONE"</strong></td></tr></tbody></table>
+| Tag | Açıklama | Format |
+| --- | --- | --- |
+| field | Listelemek istediğimiz verilerin ait olduğu kolonları ifade eder. | **String** |
+| operator | Field ve value değerleri arasındaki eşleştirme ifadelerini parametre olarak alır. | **"=", "OR =", ">", "OR >", "<", "<=", "OR <", ">=", "OR >=", "<=", "OR <=", "<>", "OR <>", "IN", "OR IN", "NOT LIKE", "NOT IN", "OR NOT IN", "LIKE", "OR LIKE", "OR NOT LIKE", "LIKE AFTER", "LIKE BEFORE", "LIKE NONE"** |
 
-<mark style="color:blue;">Filtreleme Örneği 2</mark>
+Filtreleme Örneği 2
 
 Params alanı kullanılarak listelenecek alanlar arasında yalnızca "id" kolonunun listelenmesi beklenmektedir.
 
-<pre class="language-javascript"><code class="lang-javascript"><strong>{
-</strong>    "filters":"",
+```
+{
+    "filters":"",
     "params" : {"colums": ["id"]},
     "limit":"",
     "offset" : "",
     "sorting":""
 }
-</code></pre>
+```
 
-<table><thead><tr><th width="150">Tag</th><th width="351.3333333333333">Açıklama</th><th>Format</th><th data-hidden></th></tr></thead><tbody><tr><td>colums</td><td>Listelemek istediğiniz kolonları ifade eder.</td><td><strong>String</strong></td><td></td></tr></tbody></table>
+| Tag | Açıklama | Format |     |
+| --- | --- | --- | --- |
+| colums | Listelemek istediğiniz kolonları ifade eder. | **String** |     |
 
-<mark style="color:blue;">Filtreleme Örneği 3</mark>
+Filtreleme Örneği 3
 
 Limit alanı kullanılarak listeden belirtilen sayı miktarınca kayıt listelenmesi beklenmektedir.
 
@@ -71,7 +78,7 @@ Limit alanı kullanılarak listeden belirtilen sayı miktarınca kayıt listelen
 }
 ```
 
-<mark style="color:blue;">Filtreleme Örneği 3</mark>
+Filtreleme Örneği 3
 
 Offset alanı kullanılarak listelenecek verilerin tablo pk id numarasının belirtilen değerden başlanarak listelenmesi beklenmektedir.
 
@@ -85,7 +92,7 @@ Offset alanı kullanılarak listelenecek verilerin tablo pk id numarasının bel
 }
 ```
 
-<mark style="color:blue;">Filtreleme Örneği 4</mark>
+Filtreleme Örneği 4
 
 Sorting alanı kullanılarak listelenecek verilerin belirlenen bir sıralama dahilinde listelenmesi beklenmektedir.
 
@@ -99,4 +106,7 @@ Sorting alanı kullanılarak listelenecek verilerin belirlenen bir sıralama dah
 }
 ```
 
-<table><thead><tr><th width="150">Tag</th><th width="376.50982594048287">Açıklama</th><th>Format</th></tr></thead><tbody><tr><td>field</td><td>Listelemek istediğimiz verilerin ait olduğu kolonları ifade eder.</td><td><strong>String</strong></td></tr><tr><td>sort</td><td>Listelemek istediğimiz verilerin hangi sıralama formatı ile sıralanacağını ifade eder.</td><td><strong>"asc",                        "desc"</strong></td></tr></tbody></table>
+| Tag | Açıklama | Format |
+| --- | --- | --- |
+| field | Listelemek istediğimiz verilerin ait olduğu kolonları ifade eder. | **String** |
+| sort | Listelemek istediğimiz verilerin hangi sıralama formatı ile sıralanacağını ifade eder. | **"asc", "desc"** |
