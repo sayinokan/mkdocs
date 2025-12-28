@@ -1,17 +1,15 @@
 ---
-description: >-
-  ERP sisteminde kayıtlı olan ve Ödüyo ile eşleşmiş durumdaki banka hesapları
-  güncelleme işlemi için kullanılan endpoint ve http metod bilgisi aşağıda
-  verilmiştir.
+title: Banka Hesap Güncelleme
 ---
-
 # Banka Hesap Güncelleme
 
 URL
 
-<table><thead><tr><th width="149.40234375">HTTP Metod</th><th></th></tr></thead><tbody><tr><td>POST</td><td>https://www.siteadi.com/api/v1/erp/erp_bank_account/update</td></tr></tbody></table>
+| HTTP Metod |     |
+| --- | --- |
+| POST | https://www.siteadi.com/api/v1/erp/erp\_bank\_account/update |
 
-#### İşlem Parametreleri <a href="#url-1" id="url-1"></a>
+#### İşlem Parametreleri[](#url-1)
 
 ```
 {
@@ -44,22 +42,36 @@ URL
 
 Headers
 
-<table><thead><tr><th width="156.984375">Name</th><th width="125.91796875">Type</th><th>Description</th></tr></thead><tbody><tr><td>Apikey*</td><td>String</td><td>Ödüyo paneli içerinde APIKEY bölümünden alınmalıdır.</td></tr><tr><td>Authorization*</td><td>String</td><td>Kullanıcı denetimi bölümünde anlatılan Login servisi ile üretilmelidir. (SESSION_ID)</td></tr></tbody></table>
+| Name | Type | Description |
+| --- | --- | --- |
+| Apikey\* | String | Ödüyo paneli içerinde APIKEY bölümünden alınmalıdır. |
+| Authorization\* | String | Kullanıcı denetimi bölümünde anlatılan Login servisi ile üretilmelidir. (SESSION\_ID) |
 
 **Request Body**
 
-<table><thead><tr><th width="157.77734375">Name</th><th width="134.66796875">Type</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>n<strong>umerik(int)</strong></td><td>Hesaba ait Ödüyo id</td></tr><tr><td>integration_id</td><td>string</td><td>Hesaba ait ERP id</td></tr><tr><td>status</td><td>string</td><td>Hesap kullanım durumu("1" ⇒ aktif, "0" =>Pasif)</td></tr><tr><td>currency</td><td>string</td><td>Hesabın döviz bilgisi</td></tr><tr><td>account_no</td><td>string</td><td>Hesap numarası</td></tr><tr><td>iban</td><td>string</td><td>Hesap iban numarası</td></tr><tr><td>account_name</td><td>string</td><td>Hesap adı</td></tr><tr><td>account_code</td><td>string</td><td>Hesap kodu</td></tr><tr><td>account_branch</td><td>string</td><td>Hesap şube numarası</td></tr><tr><td>banka_key</td><td>string</td><td>Hesap Erp kodu</td></tr><tr><td>space1</td><td>string</td><td>Tabloda Yer Alan Ekalan Bilgileri</td></tr><tr><td>space2</td><td>string</td><td>Tabloda Yer Alan Ekalan Bilgileri</td></tr><tr><td>space3</td><td>string</td><td>Tabloda Yer Alan Ekalan Bilgileri</td></tr><tr><td>space4</td><td>string</td><td>Tabloda Yer Alan Ekalan Bilgileri</td></tr><tr><td>space5</td><td>string</td><td>Tabloda Yer Alan Ekalan Bilgileri</td></tr><tr><td>note</td><td>string</td><td>Hesap açıklama</td></tr><tr><td>hhs_code</td><td>string</td><td>Banka  kodu</td></tr><tr><td>hhs_code_desc</td><td>string</td><td>Banka  key</td></tr><tr><td>tckn_area</td><td>string</td><td>Hesabın tanımlı olduğu tckn</td></tr><tr><td>name</td><td>string</td><td>Hesaba ait ad soyad</td></tr><tr><td>phone_area</td><td>string</td><td>Bildirim tel no</td></tr><tr><td>email_area</td><td>string</td><td>Bildirim mail adresi</td></tr></tbody></table>
+| Name | Type | Description |
+| --- | --- | --- |
+| id  | n**umerik(int)** | Hesaba ait Ödüyo id |
+| integration\_id | string | Hesaba ait ERP id |
+| status | string | Hesap kullanım durumu("1" ⇒ aktif, "0" =>Pasif) |
+| currency | string | Hesabın döviz bilgisi |
+| account\_no | string | Hesap numarası |
+| iban | string | Hesap iban numarası |
+| account\_name | string | Hesap adı |
+| account\_code | string | Hesap kodu |
+| account\_branch | string | Hesap şube numarası |
+| banka\_key | string | Hesap Erp kodu |
+| space1 | string | Tabloda Yer Alan Ekalan Bilgileri |
+| space2 | string | Tabloda Yer Alan Ekalan Bilgileri |
+| space3 | string | Tabloda Yer Alan Ekalan Bilgileri |
+| space4 | string | Tabloda Yer Alan Ekalan Bilgileri |
+| space5 | string | Tabloda Yer Alan Ekalan Bilgileri |
+| note | string | Hesap açıklama |
+| hhs\_code | string | Banka kodu |
+| hhs\_code\_desc | string | Banka key |
+| tckn\_area | string | Hesabın tanımlı olduğu tckn |
+| name | string | Hesaba ait ad soyad |
+| phone\_area | string | Bildirim tel no |
+| email\_area | string | Bildirim mail adresi |
 
-=== "200"
-    ```
-    {
-        "status": true,
-        "data": "Guncelleme islemi Basarili"
-    }
-    ```
-=== "404"
-    ```
-    {
-        "status": false
-    }
-    ```
+\=== "200" `{ "status": true, "data": "Guncelleme islemi Basarili" }` \=== "404" `{ "status": false }`
