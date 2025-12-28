@@ -1,0 +1,19 @@
+content:
+  root: docs
+
+collections:
+  docs:
+    label: Docs
+    folder: docs
+    create: true
+    format: markdown
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: false
+
+      - name: body
+        label: Content
+        type: markdown
+        required: true
