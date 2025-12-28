@@ -1,12 +1,17 @@
 content:
   - name: docs
-    label: Docs
+    label: Dokümantasyon
     type: collection
     path: docs
+    extension: md
+
     fields:
       - name: title
-        label: Title
+        label: Başlık
         type: string
+        required: true
+
       - name: body
-        label: Content
+        label: İçerik
         type: rich-text
+
